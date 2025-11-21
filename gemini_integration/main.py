@@ -1,8 +1,11 @@
 from model_conf import model
 
-# Generate content
-prompt = "Explain the concept of quantum entanglement in simple terms."
-response = model.generate_content(prompt)
+def generate_explanation(prompt):
+    response = model.generate_content(prompt)
+    return response.text
 
-# Print the generated text
-print(response.text)
+if __name__ == "__main__":
+    prompt = "Explain the theory of relativity in simple terms."
+    explanation = generate_explanation(prompt)
+    print("Generated Explanation:")
+    print(explanation)
